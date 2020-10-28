@@ -2,15 +2,7 @@
 @import "_mixins";
 @import "_buttons";
 
-a {
-  margin-bottom: 10px;
-  &:nth-of-type(odd) {
-    @include link("odd");
-  }
-  &:nth-of-type(even) {
-    @include link("even");
-  }
-}
+//basic
 
 .box {
   margin-top: 20px;
@@ -28,9 +20,36 @@ a {
   }
 }
 
+//mixin: 상황에 따라 다르게 코딩을 하고 싶을 때 사용
+a {
+  margin-bottom: 10px;
+  &:nth-of-type(odd) {
+    @include link("odd");
+  }
+  &:nth-of-type(even) {
+    @include link("even");
+  }
+}
+
+//content
+p {
+  @include responsive("iphone") {
+    color: yellow;
+  }
+  @include responsive("tablet") {
+    color: blue;
+  }
+  @include responsive("iphone-l") {
+    color: red;
+  }
+  @include responsive("ipad-l") {
+    color: blueviolet;
+  }
+}
+
+//extend: 같은 코드를 중복하고 싶지 않을 때 사용
+
 button {
   @extend %button;
   border: none;
 }
-
-//extend: 같은 코드를 중복하고 싶지 않을 때 사용
