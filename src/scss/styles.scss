@@ -1,5 +1,6 @@
 @import "_variables";
 @import "_mixins";
+@import "_buttons";
 
 a {
   margin-bottom: 10px;
@@ -26,3 +27,10 @@ a {
     color: $bg;
   }
 }
+
+button {
+  @extend %button;
+  border: none;
+}
+
+//extend: 같은 코드를 중복하고 싶지 않을 때 사용
